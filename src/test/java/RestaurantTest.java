@@ -93,9 +93,22 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 () -> restaurant.removeFromMenu("French fries"));
     }
-}
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>GetCost<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void order_cost_should_be_382_when_The_SweetCornSoup_and_Vegetable_lasagne_are_ordered() throws restaurantNotFoundException {
+
+        List<String> selectedItems = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+
+
+        int totalOrderCost = restaurant.getOrderCost(selectedItems);
+
+
+        assertEquals(totalOrderCost, 388);
+    }
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>GetCost<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+}
 
 
 
